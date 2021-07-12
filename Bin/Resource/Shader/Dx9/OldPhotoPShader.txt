@@ -1,0 +1,12 @@
+sampler PostInputTexture;
+float4 PSMain(float2 texCoord: TEXCOORD0) : COLOR
+{
+float4 col = tex2D(PostInputTexture, texCoord);
+row_major float4x4 color_matrix  = {0.299f, 0.299f, 0.299f, 0.0f,
+									0.587f, 0.587f, 0.587f, 0.0f,
+									0.184f, 0.184f, 0.184f, 0.0f,
+									80.0f/255.0f, 43.0f/255.0f, -23.0f/255.0f, 1.0f};									
+									
+float4 NewCol = mul(float4(col.xyz,1.0f),color_matrix);
+return NewCol;
+}

@@ -1,0 +1,10 @@
+Texture2D<float> Buffer0 : register(t0);
+Texture2D<float> Buffer1 : register(t1);
+//SamplerState  SBuffer0 : register(s0);
+//SamplerState  SBuffer1 : register(s1);
+RWTexture2D<float> BufferOut : register(u0);
+[numthreads(16, 16, 1)]
+void CSMain( uint3 DTid : SV_DispatchThreadID )
+{
+    BufferOut[DTid.xy] = Buffer0[DTid.xy] + Buffer1[DTid.xy];
+}

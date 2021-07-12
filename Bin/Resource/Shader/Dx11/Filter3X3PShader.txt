@@ -1,0 +1,36 @@
+#define KERNELSIZE 9
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+cbuffer CB : register( b0 )
+{
+	float2 Size;
+}
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+const float2 PixelCoordsDownFilter[KERNELSIZE] =
+{
+    { -1.0,  -1.0 },
+    { -1.0,   0.0 },
+    { -1.0,   1.0 },
+
+    { 0.0,   -1.0 },
+    { 0.0,    0.0 },
+    { 0.0,    1.0 },
+
+    { 1.0,   -1.0 },
+    { 1.0,    0.0 },
+    { 1.0,    1.0 },
+};
+
+float4 col = 0;
+[unroll] for ( int i = 0; i < KERNELSIZE ; i++ )
+{
+	col += PostInputTexture.Sample( PostInputSampler, Input.texCoord + PixelCoordsDownFilter[i] / Size);
+}
+return col / KERNELSIZE;
+}

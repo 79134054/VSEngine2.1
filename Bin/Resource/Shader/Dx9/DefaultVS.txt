@@ -1,0 +1,18 @@
+#include"Shader.txt"
+row_major float4x4 WorldViewProjectMatrix;
+struct VS_INPUT 
+{ 
+	float3 Position0:POSITION0;
+};
+struct VS_OUTPUT 
+{
+	float4 Position:POSITION;
+};
+VS_OUTPUT VSMain( VS_INPUT Input)
+{
+	VS_OUTPUT Out = (VS_OUTPUT) 0; 
+	float3 Position;
+	Position = Input.Position0;
+	Out.Position = mul(float4(Position,1), WorldViewProjectMatrix);
+	return Out;
+};

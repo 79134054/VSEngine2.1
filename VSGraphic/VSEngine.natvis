@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <Type Name="VSEngine2::VSName">
+    <DisplayString>{{{m_String},{m_uiID}}}</DisplayString>
+  </Type>
+  <Type Name="VSEngine2::VSPointer&lt;*&gt;">
+    <DisplayString Condition="m_pObject == 0">Empty</DisplayString>
+    <DisplayString>{*m_pObject}</DisplayString>
+  </Type>
+  <Type Name="VSEngine2::VSUsedName">
+    <DisplayString>{m_pName}</DisplayString>
+  </Type>
+</AutoVisualizer>

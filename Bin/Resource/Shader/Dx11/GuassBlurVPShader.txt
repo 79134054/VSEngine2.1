@@ -1,0 +1,53 @@
+#define KERNELSIZE 13
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+cbuffer CB : register( b0 )
+{
+	float Size;
+}
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+const float2 PixelKernel[KERNELSIZE] =
+{
+    { 0, -6 },
+    { 0, -5 },
+    { 0, -4 },
+    { 0, -3 },
+    { 0, -2 },
+    { 0, -1 },
+    { 0,  0 },
+    { 0,  1 },
+    { 0,  2 },
+    { 0,  3 },
+    { 0,  4 },
+    { 0,  5 },
+    { 0,  6 },
+};
+const float BlurWeights[KERNELSIZE] = 
+{
+    0.002216,
+    0.008764,
+    0.026995,
+    0.064759,
+    0.120985,
+    0.176033,
+    0.199471,
+    0.176033,
+    0.120985,
+    0.064759,
+    0.026995,
+    0.008764,
+    0.002216,
+};
+float4 col = 0;
+[unroll]for ( int i = 0; i < KERNELSIZE ; i++ )
+{
+	col += PostInputTexture.Sample( PostInputSampler, Input.texCoord + PixelKernel[i] / Size) * BlurWeights[i];
+}
+return col;
+}

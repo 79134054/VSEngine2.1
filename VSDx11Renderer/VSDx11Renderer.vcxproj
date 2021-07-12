@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|Win32">
+      <Configuration>Profile</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Profile|x64">
+      <Configuration>Profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A3432B58-261B-41CD-BAD5-3FF06C8FB887}</ProjectGuid>
+    <RootNamespace>VSDx9Renderer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)_d</TargetName>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_p</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <IntDir>$(SolutionDir)\Intermediate\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(WindowsSDK_IncludePath);..\SDK\DX11\Include;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_p</TargetName>
+    <OutDir>$(SolutionDir)\Bin\$(Platform)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct_d.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem_d.lib;$(SolutionDir)\Bin\$(Platform)\VSMath_d.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic_d.lib;..\SDK\DX11\Lib\x86\dxgi.lib;..\SDK\DX11\Lib\x86\d3dx11.lib;..\SDK\DX11\Lib\x86\d3d11.lib;..\SDK\DX11\Lib\x86\dxerr.lib;..\SDK\DX11\Lib\x86\dxguid.lib;..\SDK\DX11\Lib\x86\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImageHasSafeExceptionHandlers />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct_d.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem_d.lib;$(SolutionDir)\Bin\$(Platform)\VSMath_d.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic_d.lib;..\SDK\DX11\Lib\x64\dxgi.lib;..\SDK\DX11\Lib\x64\d3dx11.lib;..\SDK\DX11\Lib\x64\d3d11.lib;..\SDK\DX11\Lib\x64\dxerr.lib;..\SDK\DX11\Lib\x64\dxguid.lib;..\SDK\DX11\Lib\x64\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader></PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem.lib;$(SolutionDir)\Bin\$(Platform)\VSMath.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic.lib;..\SDK\DX11\Lib\x86\dxgi.lib;..\SDK\DX11\Lib\x86\d3dx11.lib;..\SDK\DX11\Lib\x86\d3d11.lib;..\SDK\DX11\Lib\x86\dxerr.lib;..\SDK\DX11\Lib\x86\dxguid.lib;..\SDK\DX11\Lib\x86\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem.lib;$(SolutionDir)\Bin\$(Platform)\VSMath.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic.lib;..\SDK\DX11\Lib\x64\dxgi.lib;..\SDK\DX11\Lib\x64\d3dx11.lib;..\SDK\DX11\Lib\x64\d3d11.lib;..\SDK\DX11\Lib\x64\dxerr.lib;..\SDK\DX11\Lib\x64\dxguid.lib;..\SDK\DX11\Lib\x64\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct_p.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem_p.lib;$(SolutionDir)\Bin\$(Platform)\VSMath_p.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic_p.lib;..\SDK\DX11\Lib\x86\dxgi.lib;..\SDK\DX11\Lib\x86\d3dx11.lib;..\SDK\DX11\Lib\x86\d3d11.lib;..\SDK\DX11\Lib\x86\dxerr.lib;..\SDK\DX11\Lib\x86\dxguid.lib;..\SDK\DX11\Lib\x86\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\VSSystem\;..\VSMath\;..\VSDataStruct;..\VSGraphic\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;VSDX11RENDERER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <OmitFramePointers>false</OmitFramePointers>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)\Bin\$(Platform)\VSDataStruct_p.lib;$(SolutionDir)\Bin\$(Platform)\VSSystem_p.lib;$(SolutionDir)\Bin\$(Platform)\VSMath_p.lib;$(SolutionDir)\Bin\$(Platform)\VSGraphic_p.lib;..\SDK\DX11\Lib\x64\dxgi.lib;..\SDK\DX11\Lib\x64\d3dx11.lib;..\SDK\DX11\Lib\x64\d3d11.lib;..\SDK\DX11\Lib\x64\dxerr.lib;..\SDK\DX11\Lib\x64\dxguid.lib;..\SDK\DX11\Lib\x64\d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="VSDx11RenderAPI.cpp" />
+    <ClCompile Include="VSDx11Renderer.cpp" />
+    <ClCompile Include="VSDx11ShaderInclude.cpp" />
+    <ClCompile Include="VSDx11ShaderConstant.cpp" />
+    <ClCompile Include="VSDX11ShaderString.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VSDx11Renderer.h" />
+    <ClInclude Include="VSDx11Resource.h" />
+    <ClInclude Include="VSDx11ShaderInclude.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VSGraphic\VSGraphic.vcxproj">
+      <Project>{829d848b-e7f3-47ab-b303-cae1681dc9ea}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Bin\Resource\Shader\Dx11\BrightPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ClearRangePShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ClearRangeVShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\DefaultPS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\DefaultVS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\DynamicShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\Filter3X3PShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\FontPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\FontVShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\GammaCorrectPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\GrayPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\GuassBlurHPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\GuassBlurVPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\OcclusionVS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\OldPhotoPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\PostEffectVShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowPreVS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowPS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowVS.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\SaturationPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ScreenQuadPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\Shader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\ShadowVolume.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader1.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader2.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestByteBufferCShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestStructCShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestTextureCShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\TexAddPShader.txt" />
+    <Text Include="..\Bin\Resource\Shader\Dx11\VolumeShadowMapPShader.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

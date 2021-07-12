@@ -1,0 +1,55 @@
+//first bone num
+void ComputeBoneVector(in uint4 Index , in float4 Weight, in float4 BoneVector[%d],out float4 v1,out float4 v2,out float4 v3)
+{
+	int4 IndexS = Index * 3;
+	v1 = BoneVector[IndexS.x] * Weight.x + BoneVector[IndexS.y ] * Weight.y + BoneVector[IndexS.z] * Weight.z + BoneVector[IndexS.w] * Weight.w;
+	v2 = BoneVector[IndexS.x + 1] * Weight.x + BoneVector[IndexS.y + 1] * Weight.y + BoneVector[IndexS.z + 1] * Weight.z + BoneVector[IndexS.w + 1] * Weight.w;
+	v3 = BoneVector[IndexS.x + 2] * Weight.x + BoneVector[IndexS.y + 2] * Weight.y + BoneVector[IndexS.z + 2] * Weight.z + BoneVector[IndexS.w + 2] * Weight.w;
+
+}
+#define SIMPLE_ANIM_NUM %d
+struct ANIM_INSTANCE_SHADER_DATA
+{
+	float AnimIndex;
+	float AnimWeight;
+};
+void ComputeBoneVector(in uint4 Index , in float4 Weight,Texture2D AnimDataTexture, uint4 AnimAllInfo,ANIM_INSTANCE_SHADER_DATA AnimInstanceData[SIMPLE_ANIM_NUM], float AnimNum,out float4 v1,out float4 v2,out float4 v3)
+{
+	
+	float4 CombineBoneTemp[3] = {float4(0.0f,0.0f,0.0f,0.0f),float4(0.0f,0.0f,0.0f,0.0f),float4(0.0f,0.0f,0.0f,0.0f)};
+	for(int i = 0 ; i < AnimNum ;i++)
+	{		
+		float4 CombineBone[3] = {float4(0.0f,0.0f,0.0f,0.0f),float4(0.0f,0.0f,0.0f,0.0f),float4(0.0f,0.0f,0.0f,0.0f)};
+		float U = AnimInstanceData[i].AnimIndex;
+#if SimpleAnimInstanceLerp > 0
+		float LerpTemp = frac(U);
+		float2 U12;
+		U12.x = (U - LerpTemp);
+		U12.y = (U12.x + 1.0f);
+#endif
+		[unroll] for(int j = 0 ; j < 4 ;j++)	
+		{
+			[unroll] for(int k = 0 ; k < 3 ;k++)	
+			{
+				uint V = Index[j] * 3 + k;
+#if SimpleAnimInstanceLerp > 0
+				float4 BoneVector1 = AnimDataTexture[uint2(U12.x,V)];
+				float4 BoneVector2 = AnimDataTexture[uint2(U12.y,V)];
+				float4 BoneVector = lerp(BoneVector1,BoneVector2,LerpTemp);
+#else
+				float4 BoneVector = AnimDataTexture[uint2(U,V)];
+#endif
+				CombineBone[k] += BoneVector * Weight[j];
+			}			
+		}	
+		CombineBoneTemp[0] += CombineBone[0] * AnimInstanceData[i].AnimWeight;
+		CombineBoneTemp[1] += CombineBone[1] * AnimInstanceData[i].AnimWeight;
+		CombineBoneTemp[2] += CombineBone[2] * AnimInstanceData[i].AnimWeight;
+	}
+
+
+	v1 = CombineBoneTemp[0];
+	v2 = CombineBoneTemp[1];
+	v3 = CombineBoneTemp[2];
+
+}

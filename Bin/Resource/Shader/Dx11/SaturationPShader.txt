@@ -1,0 +1,26 @@
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+cbuffer CB : register( b0 )
+{
+	float Saturation;
+};
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+
+float4 col = PostInputTexture.Sample( PostInputSampler, Input.texCoord);
+const float rwgt = 0.3086f;
+const float gwgt = 0.6094f;
+const float bwgt = 0.0820f;
+float inv_s = 1.0f - Saturation;
+row_major float3x3 color_matrix  = {inv_s*rwgt + Saturation, inv_s*rwgt, inv_s*rwgt,
+									inv_s*gwgt, inv_s*gwgt + Saturation, inv_s*gwgt,
+									inv_s*bwgt, inv_s*bwgt, inv_s*bwgt + Saturation};
+									
+float3 NewCol = mul(col.xyz,color_matrix);
+return float4(NewCol.xyz,1.0f);
+}

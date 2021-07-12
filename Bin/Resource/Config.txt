@@ -1,0 +1,3 @@
+EnableAsynLoad false
+EnableAdvanceInstance false
+LODScreenScale 10.0f

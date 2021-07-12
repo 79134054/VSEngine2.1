@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="VSDx11RenderAPI.cpp" />
+    <ClCompile Include="VSDx11Renderer.cpp" />
+    <ClCompile Include="VSDx11ShaderInclude.cpp" />
+    <ClCompile Include="VSDx11ShaderConstant.cpp" />
+    <ClCompile Include="VSDX11ShaderString.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VSDx11Renderer.h" />
+    <ClInclude Include="VSDx11Resource.h" />
+    <ClInclude Include="VSDx11ShaderInclude.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{499aa094-242b-433a-ae86-040e2428344b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Bin\Resource\Shader\Dx11\BrightPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ClearRangePShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ClearRangeVShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\DefaultPS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\DefaultVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\DynamicShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\Filter3X3PShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\FontPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\FontVShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\GammaCorrectPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\GrayPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\GuassBlurHPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\GuassBlurVPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\OcclusionVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\OldPhotoPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\PostEffectVShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowPreVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowPS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ProjectShadowVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\SaturationPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ScreenQuadPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\Shader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\ShadowVolume.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader1.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\SSRPShader2.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestByteBufferCShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestStructCShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\TestTextureCShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\TexAddPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx11\VolumeShadowMapPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

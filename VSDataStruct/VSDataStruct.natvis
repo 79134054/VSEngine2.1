@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  <Type Name="VSEngine2::VSString">
+    <DisplayString>{m_pBuffer,na}</DisplayString>
+    <StringView>m_pBuffer,na</StringView>
+  </Type>
+  <Type Name="VSEngine2::MapElement&lt;*,*&gt;">
+    <DisplayString>{{ Key={Key},Value={Value} }}</DisplayString>
+    <Expand>
+      <Item Name="Key">Key</Item>
+      <Item Name="Value">Value</Item>
+    </Expand>
+  </Type>
+  <Type Name="VSEngine2::VSArray&lt;*,*&gt;">
+    <DisplayString>{{ Size={m_uiCurUse},Capacity={m_uiBufferNum} }}</DisplayString>
+    <Expand>
+      <ArrayItems>
+        <Size>m_uiCurUse</Size>
+        <ValuePointer>($T1*)m_pBuffer</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="VSEngine2::VSMap&lt;*,*,*&gt;">
+    <DisplayString>{{ Size={m_uiCurUse},Capacity={m_uiBufferNum} }}</DisplayString>
+    <Expand>
+      <ArrayItems>
+        <Size>m_uiCurUse</Size>
+        <ValuePointer>(VSEngine2::MapElement&lt;$T1,$T2&gt; *)m_pBuffer</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+  <Type Name="VSEngine2::VSStack&lt;*,*&gt;">
+    <DisplayString>{m_Array}</DisplayString>
+    <Expand>
+      <Item Name="End" Condition="m_Array.m_uiCurUse > 0">m_Array.m_pBuffer[0]</Item>
+      <Item Name="Top" Condition="m_Array.m_uiCurUse > 0">m_Array.m_pBuffer[m_Array.m_uiCurUse - 1]</Item>
+      <ArrayItems>
+        <Size>m_Array.m_uiCurUse</Size>
+        <ValuePointer>($T1*)m_Array.m_pBuffer</ValuePointer>
+      </ArrayItems>
+    </Expand>  
+  </Type>
+  <Type Name="VSEngine2::VSList&lt;*,*&gt;">
+    <DisplayString>{{ Size={m_uiNum},Unique={m_bUnique} }}</DisplayString>
+    <Expand>
+      <Item Name="Head" Condition="m_uiNum > 0">*m_pHead</Item>
+      <Item Name="Tail" Condition="m_uiNum > 0">*m_pTail</Item>
+      <CustomListItems>
+        <Variable Name="pBucket" InitialValue="m_pHead" />
+        <Loop>
+          <Break Condition="pBucket == nullptr" />
+          <Item>pBucket</Item>
+          <Exec>pBucket = pBucket->m_pNext</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+  <Type Name="VSEngine2::VSQueue&lt;*,*&gt;">
+    <DisplayString>{{ Size={m_uiNum},Unique={m_bUnique} }}</DisplayString>
+    <Expand>
+      <Item Name="Head" Condition="m_uiNum > 0">*m_pHead</Item>
+      <Item Name="Tail" Condition="m_uiNum > 0">*m_pTail</Item>
+      <CustomListItems>
+        <Variable Name="pBucket" InitialValue="m_pHead" />
+        <Loop>
+          <Break Condition="pBucket == nullptr" />
+          <Item>pBucket</Item>
+          <Exec>pBucket = pBucket->m_pNext</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+  <Type Name="VSEngine2::VSSafeQueue&lt;*,*&gt;">
+    <DisplayString>{m_Queue}</DisplayString>
+  </Type>
+  <Type Name="VSEngine2::VSBit&lt;*&gt;">
+    <DisplayString>{{ Size={sizeof(m_Member) * 8},Member ={m_Member,bb}}}</DisplayString>
+    <Expand>
+      <CustomListItems>
+        <Variable Name="i" InitialValue="0" />
+        <Variable Name="Value" InitialValue="false" />
+        <Variable Name="Size" InitialValue="sizeof(m_Member) * 8" />
+        <Loop>
+          <Break Condition="i >= Size" />
+          <Exec>Value = (((m_Member&amp;(1&lt;&lt;i))&gt;&gt;i)==1)</Exec>
+          <Item>Value</Item>
+          <Exec>i++</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>  
+  </Type>
+  <Type Name="VSEngine2::VSBitArray">
+    <DisplayString>{{ Size={m_uiSize * 32}}</DisplayString>
+    <Expand>
+      <ArrayItems>
+        <Size>m_uiSize</Size>
+        <ValuePointer>m_pBuffer,bb</ValuePointer>
+      </ArrayItems>
+      <CustomListItems>
+        <Variable Name="i" InitialValue="0" />
+        <Variable Name="Value" InitialValue="false" />
+        <Variable Name="Size" InitialValue="m_uiSize * 32" />
+        <Variable Name="Cell" InitialValue="0" />
+        <Variable Name="Bit" InitialValue="0" />
+        <Loop>
+          <Break Condition="i >= Size" />
+          <Exec>Cell = i / 32</Exec>
+          <Exec>Bit = i % 32</Exec>
+          <Exec>Value = (((m_pBuffer[Cell]&amp;(1&lt;&lt;Bit))&gt;&gt;Bit)==1)</Exec>
+          <Item>Value</Item>
+          <Exec>i++</Exec>
+        </Loop>
+      </CustomListItems>
+    </Expand>
+  </Type>
+</AutoVisualizer>

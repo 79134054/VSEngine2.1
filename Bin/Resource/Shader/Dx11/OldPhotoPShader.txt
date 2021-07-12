@@ -1,0 +1,19 @@
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+
+float4 col = PostInputTexture.Sample( PostInputSampler, Input.texCoord);
+row_major float4x4 color_matrix  = {0.299f, 0.299f, 0.299f, 0.0f,
+									0.587f, 0.587f, 0.587f, 0.0f,
+									0.184f, 0.184f, 0.184f, 0.0f,
+									80.0f/255.0f, 43.0f/255.0f, -23.0f/255.0f, 1.0f};									
+									
+float4 NewCol = mul(float4(col.xyz,1.0f),color_matrix);
+return NewCol;
+}

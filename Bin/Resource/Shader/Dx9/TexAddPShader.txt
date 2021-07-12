@@ -1,0 +1,8 @@
+sampler PostInputTexture;
+sampler PostInputTexture1;
+float4 PSMain(float2 texCoord: TEXCOORD0) : COLOR
+{
+float4 col = tex2D(PostInputTexture, texCoord);
+col += tex2D(PostInputTexture1, texCoord);
+return col;
+}

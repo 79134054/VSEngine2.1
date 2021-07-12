@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="VSDx9RenderAPI.cpp" />
+    <ClCompile Include="VSDx9Renderer.cpp" />
+    <ClCompile Include="VSDx9ShaderConstant.cpp" />
+    <ClCompile Include="VSDx9ShaderInclude.cpp" />
+    <ClCompile Include="VSDX9ShaderString.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VSDx9Renderer.h" />
+    <ClInclude Include="VSDx9Resource.h" />
+    <ClInclude Include="VSDx9ShaderInclude.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{647221b7-77b3-49d1-a609-3293c899c22d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Bin\Resource\Shader\Dx9\BrightPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\DefaultPS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\DefaultVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\DynamicShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\Filter3X3PShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\FontPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\FontVShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\GammaCorrectPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\GrayPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\GuassBlurHPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\GuassBlurVPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\OcclusionVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\OldPhotoPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\PostEffectVShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\ProjectShadowPreVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\ProjectShadowPS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\ProjectShadowVS.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\SaturationPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\ScreenQuadPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\Shader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\SSRPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\SSRPShader1.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\SSRPShader2.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\TexAddPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+    <Text Include="..\Bin\Resource\Shader\Dx9\VolumeShadowMapPShader.txt">
+      <Filter>Shader</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

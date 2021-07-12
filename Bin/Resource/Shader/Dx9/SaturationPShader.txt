@@ -1,0 +1,16 @@
+sampler PostInputTexture;
+float Saturation;
+float4 PSMain(float2 texCoord: TEXCOORD0) : COLOR
+{
+float4 col = tex2D(PostInputTexture, texCoord);
+const float rwgt = 0.3086f;
+const float gwgt = 0.6094f;
+const float bwgt = 0.0820f;
+float inv_s = 1.0f - Saturation;
+row_major float3x3 color_matrix  = {inv_s*rwgt + Saturation, inv_s*rwgt, inv_s*rwgt,
+									inv_s*gwgt, inv_s*gwgt + Saturation, inv_s*gwgt,
+									inv_s*bwgt, inv_s*bwgt, inv_s*bwgt + Saturation};
+									
+float3 NewCol = mul(col.xyz,color_matrix);
+return float4(NewCol.xyz,1.0f);
+}

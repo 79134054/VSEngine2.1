@@ -1,0 +1,27 @@
+#define KERNELSIZE 9
+sampler PostInputTexture;
+float2 Size;
+float4 PSMain(float2 texCoord: TEXCOORD0) : COLOR
+{
+const float2 PixelCoordsDownFilter[KERNELSIZE] =
+{
+    { -1.0,  -1.0 },
+    { -1.0,   0.0 },
+    { -1.0,   1.0 },
+
+    { 0.0,   -1.0 },
+    { 0.0,    0.0 },
+    { 0.0,    1.0 },
+
+    { 1.0,   -1.0 },
+    { 1.0,    0.0 },
+    { 1.0,    1.0 },
+};
+
+float4 col = 0;
+[unroll]for ( int i = 0; i < KERNELSIZE ; i++ )
+{
+	col += tex2D(PostInputTexture, texCoord + PixelCoordsDownFilter[i] / Size);
+}
+return col / KERNELSIZE;
+}

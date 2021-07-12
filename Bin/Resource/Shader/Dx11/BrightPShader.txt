@@ -1,0 +1,23 @@
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+cbuffer CB : register( b0 )
+{
+	float MiddleGray;
+	float WhiteCutoff;
+	float Luminance;
+}
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+float4 col = PostInputTexture.Sample( PostInputSampler, Input.texCoord);
+col *= MiddleGray / ( Luminance + 0.001f );
+col *= ( 1.0f + ( col / ( WhiteCutoff * WhiteCutoff ) ) );
+col -= 5.0f;
+col = max( col, 0.0f );
+col /= ( 10.0f + col ); 
+return col;
+}

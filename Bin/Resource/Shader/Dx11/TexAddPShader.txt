@@ -1,0 +1,15 @@
+Texture2D PostInputTexture;
+SamplerState PostInputSampler;
+Texture2D PostInputTexture1;
+SamplerState PostInputSampler1;
+struct PS_INPUT
+{
+float4 Pos: SV_POSITION;
+float2 texCoord: TEXCOORD0;
+};
+float4 PSMain(PS_INPUT Input) : SV_Target0
+{
+float4 col = PostInputTexture.Sample( PostInputSampler, Input.texCoord);
+col += PostInputTexture1.Sample( PostInputSampler1, Input.texCoord);
+return col;
+}

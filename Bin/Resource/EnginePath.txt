@@ -1,0 +1,4 @@
+OutputShaderCodePath Resource/Output/ShaderCode/
+OutputLogPath Resource/Output/Log/
+TerrainPath Resource/Terrain/
+ResourcePath Resource/
